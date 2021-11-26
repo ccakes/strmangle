@@ -203,3 +203,8 @@ func newBoilRuleset() *inflect.Ruleset {
 	rs.AddPluralExact("as", "as", true)
 	return rs
 }
+
+// Underscore takes an input string in camelCase and returns it in snake_case.
+func Underscore(name string) string {
+	return inflect.Underscore(name)
+}

@@ -199,6 +199,11 @@ func Plural(name string) string {
 	return buf.String()
 }
 
+// AddPlural adds a pluralization rule to the inflection lookup table.
+func AddPlural(suffix, replacement string, exact bool) {
+	boilRuleset.AddPluralExact(suffix, replacement, exact)
+}
+
 // Singular converts plural words to singular words (eg: people to person)
 func Singular(name string) string {
 	buf := GetBuffer()
@@ -220,6 +225,11 @@ func Singular(name string) string {
 	}
 
 	return buf.String()
+}
+
+// AddSingular adds a ingular rule to the inflection lookup table.
+func AddSingular(suffix, replacement string, exact bool) {
+	boilRuleset.AddSingularExact(suffix, replacement, exact)
 }
 
 // titleCaseCache holds the mapping of title cases.
