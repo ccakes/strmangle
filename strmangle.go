@@ -232,6 +232,16 @@ func AddSingular(suffix, replacement string, exact bool) {
 	boilRuleset.AddSingularExact(suffix, replacement, exact)
 }
 
+// AddUncountable defines a word as uncountable for the purposes of inflection.
+func AddUncountable(word string) {
+	boilRuleset.AddUncountable(word)
+}
+
+// AddAcronym registers an acronym with the inflection rules to avoid unusual output.
+func AddAcronym(word string) {
+	boilRuleset.AddAcronym(word)
+}
+
 // titleCaseCache holds the mapping of title cases.
 // Example: map["MyWord"] == "my_word"
 var (
